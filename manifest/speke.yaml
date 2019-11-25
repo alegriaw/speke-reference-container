@@ -1,0 +1,36 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: Speke-deployment
+  labels:
+    app: speke
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: speke
+  template:
+    metadata:
+      labels:
+        app: speke
+    spec:
+      containers:
+      - name: speke
+        image: speke_key_server:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: speke
+spec:
+  selector:
+    app: speke
+  ports:
+  - name: speke_webserver
+    protocol: TCP
+    port: 80
+    targetPort: 80
