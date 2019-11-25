@@ -4,3 +4,4 @@ Secure Packager and Encoder Key Exchange (SPEKE) is part of the AWS Elemental co
 [This link](https://docs.aws.amazon.com/speke/latest/documentation/what-is-speke.html) will take you to high-level SPEKE documentation available on the AWS web site.
 
 
+![SPEKE pod solution](./images/Speke pod.png)
